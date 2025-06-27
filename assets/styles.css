@@ -79,6 +79,11 @@ li {
   font-size: 18px;
 }
 
+.size-list li {
+    display: inline-block; /* Display items in a line */
+    margin-right: 10px; /* Adjust spacing between items as needed */
+}
+
 .nav-bar {
   background: linear-gradient(-90deg, #84cf6a, #16c0b0);
   height: 60px;
