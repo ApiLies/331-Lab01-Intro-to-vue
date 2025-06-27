@@ -4,12 +4,16 @@ createApp({
     setup(){
         const product = ref('Boots')
         const image = ref('./assets/images/socks_green.jpg')
-        const productLink = ref('https://www.camt.cmu.ac.th/')
+        const inStock = ref(true)
+        const inventory = ref(100)
+        const onSale = ref(false)
         return {
             product,
             image,
-            productLink
+            inStock,
+            inventory,
+            onSale
         }
-    }   //step 3.6
+    }//Step 4.9 
 
 }).mount('#app')
