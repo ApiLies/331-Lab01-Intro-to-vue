@@ -4,7 +4,7 @@ createApp({
     setup(){
         const product = ref('Boots')
         const image = ref('./assets/images/socks_green.jpg')
-        const inStock = ref(true)
+        const inStock = ref(false)
         const inventory = ref(100)
         const details = ref([
             '50% cotton',
@@ -24,9 +24,6 @@ createApp({
         function updateImage(variantImage){
             image.value = variantImage
         }
-        function toggleStockStatus() {
-            inStock.value = !inStock.value
-        }
         
         return {
             product,
@@ -37,11 +34,10 @@ createApp({
             variants,
             cart,
             addToCart,
-            updateImage,
-            toggleStockStatus
+            updateImage
         }
     }
 
 }).mount('#app')
 
-//checkpoint 6.7
+//checkpoint 7.6
