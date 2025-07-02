@@ -24,6 +24,9 @@ createApp({
         function updateImage(variantImage){
             image.value = variantImage
         }
+        function toggleStockStatus() {
+            inStock.value = !inStock.value
+        }
         
         return {
             product,
@@ -34,8 +37,11 @@ createApp({
             variants,
             cart,
             addToCart,
-            updateImage
+            updateImage,
+            toggleStockStatus
         }
     }
 
 }).mount('#app')
+
+//checkpoint 6.7
