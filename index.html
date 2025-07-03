@@ -13,9 +13,19 @@
 <body>
     <div id="app">
         <div class="nav-bar"></div>
-        <div class="cart">Cart({{cart}})</div>
+        <div class="cart">
+            <h3>Cart</h3>
+            <p v-if="cart.length === 0">No items.</p>
+            <ul v-else>
+            <!-- loop over id/count pairs -->
+            <li v-for="(count, id) in cartSummary" :key="id">
+                Product {{ id }}: {{ count }}
+            </li>
+            </ul>
+        </div>
+        
         <product-display></product-display>
-        <product-display :premium="premium"></product-display>
+        <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
     </div>
 
     <!-- Import Js -->

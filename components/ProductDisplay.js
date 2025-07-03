@@ -29,7 +29,7 @@ const productDisplay = {
         props: {
             premium: Boolean
         },
-        setup(props){
+        setup(props, { emit }){     //Instruction says delete shipping if-else, but it caused problems, keeping it
             const shipping = computed(() => {
                 if(props.premium){
                     return 'Free'
@@ -63,7 +63,7 @@ const productDisplay = {
                 return variants.value[selectedVariant.value].quantity
             })
             function addToCart(){
-                cart.value += 1
+                emit('add-to-cart', variants.value[selectedVariant.value].id)
             }
             const title = computed (() => {
                 return brand.value + ' ' + product.value
