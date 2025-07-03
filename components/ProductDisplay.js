@@ -12,9 +12,9 @@ const productDisplay = {
                 <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
                 <p v-else>Out of Stock</p>
                 <p>Shipping: {{shipping}}</p>
-                <ul>
-                    <li v-for="detail in details">{{detail}}</li>
-                </ul>
+
+                <product-details :details="details"></product-details>
+
                 <div v-for="(variant,index) in variants" :key="variant.id"
                 @mouseover="updateVariant(index)"
                 class="color-circle" :style="{backgroundColor: variant.color}">
@@ -83,5 +83,5 @@ const productDisplay = {
                 updateVariant,
                 shipping
             }
-        } //Checkpoint 9.9
+        } //Checkpoint 9.10
 }
